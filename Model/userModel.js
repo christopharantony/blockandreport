@@ -5,6 +5,9 @@ const userSchema = new mongoose.Schema({
     userId: String,
     blockedBy: {
         type: Array
+    },
+    reports: {
+        type: Array
     }
 });
 

@@ -4,6 +4,8 @@ const app = express()
 const mongoose = require("mongoose")
 require("dotenv").config();
 
+const port = process.env.PORT || 3000
+
 mongoose.connect(process.env.MONGOURL, {
     // useNewUrlParser: true,
     // useUnifiedTopology: true
@@ -18,6 +20,6 @@ app.use(express.json());
 // app.use("/",require("./Routes/userRouter"))
 app.use('/', require('./Routes/userRouter'))
 
-app.listen(7000, () => {
-    console.log("http://localhost:7000")
+app.listen(port, () => {
+    console.log(`http://localhost:${port}`)
 });
